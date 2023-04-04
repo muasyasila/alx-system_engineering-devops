@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 exec { 'http header':
 	command  => 'sudo apt-get update -y;
 	sudo apt-get install nginx -y;
