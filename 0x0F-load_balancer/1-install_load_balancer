@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
+# configuring a load-balancing server
+
 sudo apt-get install -y --no-install-recommends software-properties-common
 sudo add-apt-repository -y ppa:vbernat/haproxy-2.4
 sudo apt-get update -y
 sudo apt-get install -y haproxy=2.4.\*
-
 echo \
 	"
 frontend localnodes
@@ -15,5 +16,4 @@ backend nodes
 	balance roundrobin
 	server 976-web-01 34.74.122.123
 	server 976-web-02 3.231.229.36" >> /etc/haproxy/haproxy.cfg
-
 sudo service haproxy restart
